@@ -7,7 +7,8 @@
 int main() {
     int window_width = 1000;
     int window_height = 1000;
-    sf::RenderWindow window(sf::VideoMode(window_width, window_height), "tsar");
+    sf::ContextSettings context(0,0,8);
+    sf::RenderWindow window(sf::VideoMode(window_width, window_height), "tsar", sf::Style::Default, context);
     int grid_size_x = 6;
     int grid_size_y = 6;
 
@@ -48,7 +49,7 @@ int main() {
                 );
             }
         }
-        window.clear();
+        window.clear(sf::Color(240,233,194,255));
         window.draw(map);
         window.display();
     }
