@@ -12,13 +12,16 @@ public:
 	tile(int texture, const sf::Texture& tileset, const sf::Vector2u& tilesize)
 		: m_texturepos(texture), m_tileset(tileset), m_tilesize(tilesize) {};
 
-	void addContained(std::shared_ptr<creatable> thing);
+	void addContained(std::shared_ptr<creatable> thing){
+		m_contained.push_back(thing);
+		thing->onShow();
+	};
 	void drawContained(sf::RenderTarget& target);
 
 	void setQuadPosition(const unsigned int& x, const unsigned int& y);
 	void updateQuadRef(sf::Vertex* ref);
 	void updateQuadTexture();
-	
+
 protected:
 	void getTexturePositioninTileset(int& tu, int& tv);
 	int m_texturepos;

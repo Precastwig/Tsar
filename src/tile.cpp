@@ -2,13 +2,11 @@
 #include <assert.h>
 #include <creatable.hpp>
 
-void tile::addContained(std::shared_ptr<creatable> thing) {
-	m_contained.push_back(thing);
-	thing->onShow();
-}
-
 void tile::drawContained(sf::RenderTarget& target) {
 	for(unsigned int i = 0; i < m_contained.size(); i++) {
+		sf::Vector2f new_pos = quad_ref[0].position;
+		new_pos = new_pos + sfVector2f(m_tileSize/4, m_tileSize/4);
+		m_contained[i]->setPosition(new_pos);
 		target.draw(*m_contained[i]);
 	}
 }

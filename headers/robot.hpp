@@ -19,7 +19,10 @@ public:
 	virtual void onShow() override;
 
 private:
-
+	int attack_distance;
+	std::vector<std::vector<bool>> attack_pattern;
+	int max_health;
+	int current_health;
 };
 
 #endif

@@ -19,7 +19,7 @@ main: board
 	@echo "Built main.o"
 
 all: main
-	@$(COMPILER) -std=c++11 bin/tile.o bin/grass.o bin/robot.o bin/board.o bin/main.o -o tsar -lsfml-graphics -lsfml-window -lsfml-system
+	@$(COMPILER) -std=c++11 bin/grass.o bin/robot.o bin/board.o bin/main.o bin/tile.o -o tsar -lsfml-graphics -lsfml-window -lsfml-system
 	@echo "Linked all into tsar executable"
 
 clean:

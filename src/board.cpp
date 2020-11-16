@@ -1,5 +1,7 @@
 #include <board.hpp>
+
 #include <tile.hpp>
+
 #include <assert.h>
 #include <stdlib.h>
 #include <memory>
@@ -23,12 +25,12 @@ board::board(
 
             // get a pointer to the current tile's quad
             sf::Vertex* quad = &m_vertices[(i + j * m_width) * 4];
-			tile->updateQuadRef(quad);
+						tile->updateQuadRef(quad);
 
             // define its 4 corners
             tile->setQuadPosition(i,j);
 
-			tile->updateQuadTexture();
+						tile->updateQuadTexture();
         }
 	}
 }

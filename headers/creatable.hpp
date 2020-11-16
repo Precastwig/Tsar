@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 
+// Header only virtual class for items that can be
 class creatable : public sf::Sprite {
 public:
 	creatable(sf::Texture texture) {
@@ -14,6 +15,7 @@ public:
 		this->setPosition(100, 25);
 	};
 
+	// Called once it's shown
 	virtual void onShow() = 0;
 protected:
 	std::string get_file_contents(const std::string filename) {
